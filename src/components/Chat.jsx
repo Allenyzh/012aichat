@@ -1,5 +1,6 @@
 import useMessageStore from '../store/store';
-import Markdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function Chat() {
   const { messages } = useMessageStore();
@@ -25,7 +26,9 @@ export default function Chat() {
             <time className="text-xs opacity-50">{time}</time>
           </div>
           <div className="chat-bubble">
-            <Markdown>{message.text}</Markdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {message.text}
+            </ReactMarkdown>
           </div>
           <div className="chat-footer opacity-50">Delivered</div>
         </div>

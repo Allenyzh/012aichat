@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+table {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 50%;
+}
+th {
+  font: 700;
+}
+th,
+td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #d6eeee;
+}
