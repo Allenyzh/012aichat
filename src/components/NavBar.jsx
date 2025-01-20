@@ -7,19 +7,19 @@ import DropDown from './DropDown';
 export default function NavBar() {
   const apiKey = useMessageStore((state) => state.apiKey);
   return (
-    <div className="navbar bg-base-100 text-white">
-      <div className="flex-1 flex flex-col justify-center items-center">
+    <div className="navbar bg-base-100 text-white flex justify-end md:justify-normal">
+      <div className="flex-1 hidden md:flex flex-col justify-center items-center">
         <h1 className="font-bold text-3xl p-4">AI Chat</h1>
         {apiKey ? <Online /> : <Offline />}
       </div>
 
-      <div className="flex gap-2">
+      <div className="gap-2">
         <DropDown />
         <button
           className="btn btn-warning"
           onClick={() => document.getElementById('my_modal_1').showModal()}
         >
-          Clear Chat History/API Key
+          Clear<span className="hidden md:flex"> Chat History/API Key</span>
         </button>
         <Warning />
         <Link to="/012aichat" className="flex-none">

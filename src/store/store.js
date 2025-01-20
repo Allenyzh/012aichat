@@ -4,8 +4,25 @@ import { persist } from 'zustand/middleware';
 export const useMessageStore = create(
   persist(
     (set, get) => ({
-      model: 'gemini-1.5-flash-8b',
-      setModel: (model) => set({ model: model }, console.log(model)),
+      model: { name: 'gemini-1.5-flash-8b', displayName: '1.5 flash 8b' },
+
+      modelList: [
+        { name: 'gemini-2.0-flash-exp', displayName: '2.0 flash' },
+        { name: 'gemini-1.5-flash', displayName: '1.5 flash' },
+        { name: 'gemini-1.5-flash-8b', displayName: '1.5 flash 8b' },
+        { name: 'gemini-1.5-pro', displayName: '1.5 pro' },
+      ],
+      setModel: (modelName) => {
+        const selectedModel = get().modelList.find(
+          (model) => model.name === modelName
+        );
+        console.log(selectedModel);
+        if (selectedModel) {
+          set({ model: selectedModel });
+        } else {
+          console.warn(`Model with name "${modelName}" not found.`);
+        }
+      },
 
       apiKey: '',
       setApi: (api) => set({ apiKey: api }),
@@ -51,7 +68,7 @@ export const useMessageStore = create(
         setMessages({ text: '', isUser: false });
 
         const requestBody = {
-          model: `${model}`,
+          model: `${model.name}`,
           messages: [
             ...messages.map((msg) => ({
               role: msg.isUser ? 'user' : 'assistant',

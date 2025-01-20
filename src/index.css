@@ -6,3 +6,17 @@ strong {
   padding-right: 1%;
 }
 
+pre {
+  text-wrap: wrap;
+  padding-right: 5%;
+}
+
+
+/* @media (max-width: 768px) {
+  td,
+  th {
+    font-size: 0.5rem;
+    padding: 0%;
+    max-width: 60px;
+  }
+} */

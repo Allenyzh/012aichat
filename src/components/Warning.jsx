@@ -25,7 +25,10 @@ export default function Warning() {
                 className="tooltip tooltip-secondary tooltip-top flex gap-2"
                 data-tip="DELETE"
               >
-                <button className="btn btn-warning" onClick={clearHistory}>
+                <button
+                  className="btn btn-warning text-wrap w-28"
+                  onClick={clearHistory}
+                >
                   Delete Chat History
                 </button>
               </div>
@@ -34,7 +37,10 @@ export default function Warning() {
                 data-tip="DELETE"
               >
                 <Link to="/012aichat">
-                  <button className="btn btn-warning" onClick={clearApi}>
+                  <button
+                    className="btn btn-warning text-wrap w-28"
+                    onClick={clearApi}
+                  >
                     Delete Api Key
                   </button>
                 </Link>

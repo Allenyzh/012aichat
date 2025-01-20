@@ -30,7 +30,7 @@ export default function ChatPageLayout() {
         >
           <textarea
             placeholder="Type here..."
-            className="textarea textarea-bordered textarea-xs w-full max-w-xs my-5 resize-none "
+            className="textarea textarea-bordered textarea-xs w-full max-w-xs my-5 resize-none text-lg "
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           ></textarea>
