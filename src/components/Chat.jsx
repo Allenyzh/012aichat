@@ -26,7 +26,7 @@ export default function Chat() {
             <time className="text-xs opacity-50">{time}</time>
           </div>
           <div className="chat-bubble">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} className="table table-lg text-base table-zebra tracking-wide leading-loose ">
               {message.text}
             </ReactMarkdown>
           </div>
