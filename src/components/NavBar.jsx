@@ -7,7 +7,7 @@ import DropDown from './DropDown';
 export default function NavBar() {
   const apiKey = useMessageStore((state) => state.apiKey);
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 text-white">
       <div className="flex-1 flex flex-col justify-center items-center">
         <h1 className="font-bold text-3xl p-4">AI Chat</h1>
         {apiKey ? <Online /> : <Offline />}

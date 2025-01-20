@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <form
-      className="flex flex-col items-center justify-center h-screen"
+      className="flex flex-col items-center justify-center h-screen text-white"
       onSubmit={handleSubmit(onSubmitHandler)}
     >
       <h1 className="font-bold text-3xl p-4">API Key</h1>
@@ -57,10 +57,10 @@ export default function Home() {
       </label>
       <p className="text-red-700 py-1 font-bold">{errors.ApiKey?.message}</p>
       <div className="flex gap-2">
-        <button className="btn my-5" type="submit">
+        <button className="btn my-5 text-white" type="submit">
           Done
         </button>
-        <Link to="chat" className="btn my-5">
+        <Link to="chat" className="btn my-5 text-white">
           Skip
         </Link>
       </div>

@@ -3,9 +3,9 @@ export default function DropDown() {
   const geminiModel = useMessageStore((state) => state.model);
   const setModel = useMessageStore((state) => state.setModel);
   return (
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn m-1 w-72">
-        Model: {geminiModel}
+    <div className="dropdown ">
+      <div tabIndex={0} role="button" className="btn m-1 w-72 text-black hover:text-white bg-warning">
+        <strong>Current Model :</strong> {geminiModel}
       </div>
       <ul
         tabIndex={0}
