@@ -28,7 +28,7 @@ export default function Chat() {
           <div className="chat-bubble mr-5">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              className="table table-xs md:table-lg text-base table-zebra tracking-wide leading-loose text-white text-wrap"
+              className="table table-xs lg:table-md md:table-lg text-base table-zebra tracking-wide leading-loose text-white text-wrap"
             >
               {message.text}
             </ReactMarkdown>
